@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="myAppp">
+<head>
+  <title>Zasieg i szablony komponentu AngularJS</title>
+</head>
+<body>
+  <div ng-controller="SimpleTemplate">
+    Wartość A: <input type="number" ng-model="valueA"  /><br>
+    Wartość B: <input type="number" ng-model="valueB"  /><br><br>
+    Wartość wyrazenia: {{valueA + valueB}}<br><br>
+    <input type="button" ng-click="addValues(valueA, valueB)" value ="Kliknij, aby dodać wartości {{valueA}} & {{valueB}}" /><br>
+    Wartość po kliknięciu: {{valueC}}<br>
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/scope_template.js"></script>
+</body>
+</html>

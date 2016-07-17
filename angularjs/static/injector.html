@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>"Wstrzykiwanie" zaleznosci w środowisku AngularJS</title>
+</head>
+<body>
+  <div ng-controller="controllerA">
+    <h2>Komunikat aplikacji:</h2>
+    {{message}}
+  </div><hr />
+  <div ng-controller="controllerB">
+    <h2>Komunikat modułu:</h2>
+    {{message}}
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/injector.js"></script>
+</body>
+</html>

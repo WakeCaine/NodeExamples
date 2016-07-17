@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myAppEvents">
+<head>
+  <title>Zdarzenia zasiegow AngularJS</title>
+  <style>
+    div{padding: 5px; font: 18px bold;}
+    span{padding: 3px; margin: 12px; border: 5px ridge; cursor: pointer;}
+    label{padding: 2px; margin: 5px; font: 15px bold;}
+    p{padding-left: 22px; margin: 5px;}
+  </style>
+</head>
+<body>
+  <div ng-controller="Characters">
+    <span ng-repeat="name in names"
+          ng-click="changeName()">{{name}}</span>
+    <div ng-controller="Character"><hr />
+      <label>Imię: </label><p>
+        {{currentName}}
+      </p>
+      <label>Rasa: </label><p>
+        {{currentInfo.race}}
+      </p>
+      <label>Broń: </label><p>
+        {{currentInfo.weapon}}
+      </p>
+      <span ng-click="deleteChar()">Usuń</span>
+    </div>
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/scope_events.js"></script>
+</body>
+</html>
