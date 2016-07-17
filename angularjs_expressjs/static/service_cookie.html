@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="myAppCookies">
+<head>
+  <title>Usługa $cookie środowiska AngularJS</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h3>Ulubione ciastko:</h3>
+    <input type="radio" ng-model="favCookie" value="Kostka czekolady" ng-change="setCookie()" />Kostka czekolady</value><br />
+    <input type="radio" ng-model="favCookie" value="Owsiane" ng-change="setCookie()" />Owsiane<br />
+    <input type="radio" ng-model="favCookie" value="Lukrowane" ng-change="setCookie()" />Lukrowane<br />
+    <input type="radio" ng-model="favCookie" value="Żadne" ng-change="setCookie()" />Żadne<br />
+    <hr />Informacje cookie: {{myFavCookie}}
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular-cookies.min.js"></script>
+  <script src="/js/service_cookies.js"></script>
+</body>
+</html>

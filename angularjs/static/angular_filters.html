@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myAppFilters">
+<head>
+  <title>Filtry AngularJS</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Podstawowe filtry</h2>
+    Liczba: {{123.45678 | number:3}}<br />
+    Wartość walutowa: {{123.44352 | currency:"$"}}<br />
+    Data: {{1389323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+    Format JSON: {{JSONObj | json}}<br />
+    Ograniczona tablica: {{ days | limitTo:3}}<br />
+    Ograniczony lancuch: {{ word | limitTo:10}}<br />
+    Duze litery: {{ word | uppercase | limitTo:10}}<br />
+    Male litery: {{ word | lowercase | limitTo:10}}
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular_filters.js"></script>
+</body>
+</html>

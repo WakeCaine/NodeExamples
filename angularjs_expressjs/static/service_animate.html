@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myAppAnimate">
+<head>
+  <title>Usługa $animate środowiska AngularJS</title>
+  <script src="/js/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="/css/animate.css" />
+</head>
+<body>
+  <div ng-controller="myController">
+    <h3>Animacja obrazu:</h3>
+    <input type="button" ng-click="myImgClass='fadeOut'" value="Zanikanie" />
+    <input type="button" ng-click="myImgClass=''" value="Rozjaśnianie" />
+    <input type="button" ng-click="myImgClass='shrink'" value="Mały" />
+    <input type="button" ng-click="myImgClass=''" value="Duzy" />
+    <hr />
+    <img ng-class="myImgClass" src="/images/arch.jpg" />
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular-animate.min.js"></script>
+  <script src="/js/service_animate.js"></script>
+</body>
+</html>

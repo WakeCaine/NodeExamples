@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myAppEvent">
+<head>
+  <title>Dyrektywy zdarzenia AngularJS</title>
+</head>
+<body>
+  <div ng-controller="myController" ng-click="mouseClick($event)">
+    <h2>Dyrektywy zdarzenia</h2>
+    <input type="text"
+        ng-blur="focusState='Dezaktywowano'"
+        ng-focus="focusState='Aktywowano'"
+        ng-mouseenter="mouseState='Umieszczono'"
+        ng-mouseleave="mouseState='W lewo'"
+        ng-mouseclick="mouseState='Kliknieto'"
+        ng-mousedown="mouseState='Nacisnieto'"
+        ng-mouseup="mouseState='Zwolniono'"
+        ng-keyup="keyStroke($event)"
+        ng-click="mouseClick($event)" /><hr />
+    Stan aktywnosci: {{focusState}}<br />
+    Stan myszy: {{mouseState}}<br />
+    Informacja o klawiszu: {{keyInfo|json}}<br />
+    Informacja o myszy: {{mouseInfo|json}}<br />
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/directive_event.js"></script>
+</body>
+</html>

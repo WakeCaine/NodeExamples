@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myAppForms">
+<head>
+  <title>Dyrektywy formularza aplikacji AngularJS</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Dyrektywy formularza</h2>
+    <input type="text" ng-model="someText" /> {{someText}} <hr />
+    <input type="checkbox" ng-model="cbValue" ng-true-value="CUDOWNE" ng-false-value="KOSZMARNE" />
+    Pole wyboru: {{cbValue}}<hr />
+    <input type="radio" ng-model="cameraName" value="Canon" /> Canon <br />
+    <input type="radio" ng-model="cameraName" value="Nikon" /> Nikon <br />
+    Wybrany aparat: {{cameraName}} <hr />
+    <select ng-model="camera" ng-options="c.model group by c.make for c in cameras"></select>
+    {{camera|json}}
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/directive_form.js"></script>
+</body>
+</html>

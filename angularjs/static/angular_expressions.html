@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myAppExpressions">
+<head>
+  <title>Wyrazenia aplikacji AngularJS</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h1>Wyrazenia</h1>
+    {{'Bilbo' + ' Baggins'}}<br />
+    {{first}} {{last}}<br />
+    {{combine('Bilbo', 'Baggins')}}<br />
+    {{combine(first,last)}}<br />
+    <p ng-click="setName(newFirst, newLast)">
+      Kliknij, aby zmienić na: {{newFirst}} {{newLast}}
+    </p>
+    <p ng-click="setName('Bilbo', 'Baggins')">
+      Kliknij, aby zmienić na: Biblo Baggins
+    </p>
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular_expressions.js"></script>
+</body>
+</html>

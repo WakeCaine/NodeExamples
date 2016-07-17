@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myAppFilterSortCustom">
+<head>
+  <title>Filtr niestandardowy AngularJS</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Sortowanie i filtrowanie</h2>
+    {{phrase | censor:"***"}}<br />
+    {{"To jest niedobry, mroczny, ponury tekst." | censor:"radosny"}}
+    <p ng-click="filterText()">
+      {{txt}}
+    </p>
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/angular_filter_customer.js"></script>
+</body>
+</html>

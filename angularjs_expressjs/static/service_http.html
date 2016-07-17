@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="myAppHttp">
+<head>
+  <title>Usługa $http środowiska AngularJS</title>
+  <style>span{color: red;}</style>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Usługa $http</h2>
+    <input type="button" ng-click="resetDays()" value="Inicjuj dni" />
+    {{status}}
+    <h3>Dostępne dni</h3>
+    <div ng-repeat="day in days">
+      {{day}}
+      [<span ng-click="removeDay(day)">usuń</span>]
+    </div>
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/service_http.js"></script>
+</body>
+</html>
