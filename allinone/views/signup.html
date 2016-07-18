@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>Rejestrowanie sesji i logowanie uzytkownikow</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <p class="form-header">
+      Rejestrowanie
+    </p>
+    <form method="POST">
+      <label>Nazwa uzytkownika:</label>
+      <input type="text" name="username" /><br />
+      <label>Hasło:</label>
+      <input type="password" name="password" /><br />
+      <label>Email:</label>
+      <input type="email" name="email" /><br />
+      <input type="submit" value="Zarejestruj" />
+    </form>
+  </div>
+  <hr /><%= msg %>
+</body>
+</html>

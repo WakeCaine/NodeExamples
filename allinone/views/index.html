@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Logowanie uzytkownikow i sesje</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+</head>
+<body>
+  <div ng-controller="myController">
+    <h2>Witaj. Zalogowano jako <%= username %></h2>
+    <a href="/logout">wyloguj</a>
+    <a href="/user">Edytuj uzytkownika</a>
+    <p>
+      W tym miejscu umeisc kod
+    </p>
+  </div>
+  <hr /><%= msg %>
+  <script src="/lib/angular.min.js"></script>
+  <script src="/static/js/my_app.js"></script>
+</body>
+</html>

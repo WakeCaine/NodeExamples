@@ -1,0 +1,21 @@
+{
+	"author": "Darius B",
+	"name": "censorify",
+	"version": "0.0.1",
+	"description": "Censor",
+	"dependencies": {
+	"express": "4.14.0",
+	"express-session": "1.14.0",
+	"ejs": "2.4.2",
+	"body-parser": "1.0.2",
+	"connect-mongo": "0.4.0",
+	"cookie-parser": "1.0.1",
+	"cookie-session": "1.0.1",
+	"mongodb": "2.2.2",
+	"mongoose": "4.5.5",
+	"connect-mongo": "1.2.1"
+	},
+	"engines": {
+		"node": "*"
+	}
+}
