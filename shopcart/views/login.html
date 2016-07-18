@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Logowanie uzytkownikow i sesje</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <p class="form-header">
+      Logowanie
+    </p>
+    <form method="POST">
+      <label>Nazwa uzytkownika:</label>
+      <input type="text" name="username" /><br />
+      <label>Hasło:</label>
+      <input type="password" name="password" /><br />
+      <input type="submit" value="Zaloguj" />
+    </form>
+  </div>
+  <a href="/signup">Zarejestruj</a>
+  <hr /><%= msg %>
+</body>
+</html>

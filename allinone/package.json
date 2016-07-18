@@ -1,8 +1,8 @@
 {
 	"author": "Darius B",
-	"name": "censorify",
+	"name": "testwhole",
 	"version": "0.0.1",
-	"description": "Censor",
+	"description": "testwhole",
 	"dependencies": {
 	"express": "4.14.0",
 	"express-session": "1.14.0",

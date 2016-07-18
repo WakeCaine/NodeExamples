@@ -1,8 +1,8 @@
 {
 	"author": "Darius B",
-	"name": "censorify",
+	"name": "angularjs/express_test",
 	"version": "0.0.1",
-	"description": "Censor",
+	"description": "angularjs/express_test",
 	"dependencies": {
 	"express": "4.14.0",
 	"express-session": "~1.13.0",
