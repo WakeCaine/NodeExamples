@@ -1,0 +1,167 @@
+<div class="head-bread">
+              <div class="container">
+                  <ol class="breadcrumb">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Men</a></li>
+                      <li class="active">Shop</li>
+                  </ol>
+              </div>
+          </div>
+          <div ng-init="getBook()">
+            <div class="showcase-grid">
+                <div class="container">
+                    <div class="col-md-8 showcase">
+                        <div class="flexslider" flexslider>
+                              <ul class="slides">
+                                <li data-thumb="/images/best.jpg">
+                                    <div class="thumb-image"> <img ng-src="images/best.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                </li>
+                                <li data-thumb="/images/best.jpg">
+                                    <div class="thumb-image"> <img ng-src="images/best.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                </li>
+                                <li data-thumb="/images/best.jpg">
+                                    <div class="thumb-image"> <img ng-src="images/best.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                </li>
+                                <li data-thumb="/images/best.jpg">
+                                    <div class="thumb-image"> <img ng-src="images/best.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                </li>
+                              </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 showcase">
+                        <div class="showcase-rt-top">
+                            <div class="pull-left shoe-name">
+                                <h3>{{book.title}}</h3>
+                                <p>{{book.author}}</p>
+                                <h4>&#36;190</h4>
+                            </div>
+                            <div class="pull-left rating-stars">
+                                <ul>
+                                  <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+                                  <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+                                  <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+                                  <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+                                  <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <hr class="featurette-divider">
+                        <div class="shocase-rt-bot">
+                            <ul>
+                                <li class="ad-2-crt simpleCart_shelfItem">
+                                    <a class="btn item_add" href="#" role="button">Add To Cart</a>
+                                    <a class="btn" href="#" role="button">Buy Now</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="showcase-last">
+                            <h3>product details</h3>
+                            <ul>
+                                <li>Something</li>
+                                <li>Something</li>
+                                <li>Something</li>
+                                <li>Somethingn</li>
+                                <li>Something</li>
+                            </ul>
+                        </div>
+                    </div>
+            <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="specifications">
+                <div class="container">
+                  <h3>Item Details</h3>
+                    <div id="tabs" class="detai-tabs">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-pills tab-nike" role="tablist">
+                        <li role="presentation" class="active"><a data-target="#home" aria-controls="home" role="tab" data-toggle="tab">Highlights</a></li>
+                        <li role="presentation"><a data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">Description</a></li>
+                        <li role="presentation"><a data-target="#messages" aria-controls="messages" role="tab" data-toggle="tab">Terms & conditiona</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                        <p>Something</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                        <p>{{book.description}}</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            The images of a product may slightly differ.
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="you-might-like">
+              <div class="container">
+                  <h3 class="you-might">Products You May Like</h3>
+                  <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                       <!-- normal -->
+                          <div class="ih-item square effect3 bottom_to_top">
+                              <div class="bottom-2-top">
+                      <div class="img"><img src="images/grid4.jpg" alt="/" class="img-responsive gri-wid"></div>
+                              <div class="info">
+                                  <div class="pull-left styl-hdn">
+                                      <h3>style 01</h3>
+                                  </div>
+                                  <div class="pull-right styl-price">
+                                      <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+                                  </div>
+                                  <div class="clearfix"></div>
+                              </div></div>
+                          </div>
+                      <!-- end normal -->
+                      <div class="quick-view">
+                          <a href="single.html">Quick view</a>
+                      </div>
+                  </div>
+                  <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                      <!-- normal -->
+                          <div class="ih-item square effect3 bottom_to_top">
+                              <div class="bottom-2-top">
+                      <div class="img"><img src="images/grid6.jpg" alt="/" class="img-responsive gri-wid"></div>
+                              <div class="info">
+                                  <div class="pull-left styl-hdn">
+                                      <h3>style 01</h3>
+                                  </div>
+                                  <div class="pull-right styl-price">
+                                    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+                                  </div>
+                                  <div class="clearfix"></div>
+                              </div></div>
+                          </div>
+                      <!-- end normal -->
+                      <div class="quick-view">
+                          <a href="single.html">Quick view</a>
+                      </div>
+                  </div>
+                  <div class="col-md-4 grid-stn simpleCart_shelfItem">
+                      <!-- normal -->
+                          <div class="ih-item square effect3 bottom_to_top">
+                              <div class="bottom-2-top">
+                      <div class="img"><img src="images/grid3.jpg" alt="/" class="img-responsive gri-wid"></div>
+                              <div class="info">
+                                  <div class="pull-left styl-hdn">
+                                      <h3>style 01</h3>
+                                  </div>
+                                  <div class="pull-right styl-price">
+                                    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+                                  </div>
+                                  <div class="clearfix"></div>
+                              </div></div>
+                          </div>
+                      <!-- end normal -->
+                      <div class="quick-view">
+                          <a href="single.html">Quick view</a>
+                      </div>
+                  </div>
+                  <div class="clearfix"></div>
+              </div>
+          </div>
