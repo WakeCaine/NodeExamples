@@ -1,4 +1,4 @@
-angular.module('myApp',['ngRoute']).
+angular.module('myApp',['ngRoute','ngCookies']).
 	config(function($routeProvider){
 		$routeProvider.when('/', {
 			controller:'myController',
@@ -23,5 +23,13 @@ angular.module('myApp',['ngRoute']).
 		.when('/login',{
 			controller: 'myController',
 			templateUrl: 'static/login.html'
+		})
+		.when('/signup',{
+			controller: 'myController',
+			templateUrl: 'static/signup.html'
+		})
+		.when('/checkout',{
+			controller: 'myController',
+			templateUrl: 'static/signup.html'
 		});
 	});

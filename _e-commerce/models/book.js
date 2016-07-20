@@ -35,3 +35,9 @@ var bookSchema = mongoose.Schema({
 	}
 });
 mongoose.model('Book', bookSchema);
+
+var bookQuantitySchema = new Schema({
+  quantity: Number,
+  product: [bookSchema]
+}, { _id: false });
+mongoose.model('bookQuantity', bookQuantitySchema);

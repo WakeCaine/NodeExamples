@@ -4,6 +4,7 @@ module.exports = function(app) {
   var users = require('./controllers/users_controller');
   var _book = require('./controllers/book_controller');
   var _genre = require('./controllers/genre_controller');
+  var _cart = require('./controllers/cart_controller');
   app.use('/static', express.static('./static')).
       use('/lib', express.static('./lib')).
       use('/images', express.static('./images')).
@@ -12,20 +13,11 @@ module.exports = function(app) {
   //GET
   app.get('/', function(req,res) {
     if(req.session.user){
-      res.render('logged', {username: req.session.username,
+      res.render('index', {username: req.session.username,
                           msg: req.session.msg, logged: req.session.logged});
     } else {
-      res.render('logged', {username: null,
-                          msg: 'brak', logged: null});
-    }
-  });
-  app.get('/:partial', function(req,res) {
-    if(req.session.user){
-      res.render('/static/' + partial +'.html', {username: req.session.username,
-                          msg: req.session.msg, logged: req.session.logged});
-    } else {
-      req.session.msg = 'Odmowa dostępu!';
-      res.redirect('/static/login.html');
+      res.render('index', {username: null,
+                          msg: '', logged: false});
     }
   });
   app.get('/bookstore', function(req, res){
@@ -36,18 +28,12 @@ module.exports = function(app) {
       res.render('user', {msg: req.session.msg});
     } else {
       req.session.msg = 'Odmowa dostępu!';
-      res.redirect('/logged/login');
+      res.redirect('#/login');
     }
-  });
-  app.get('/signup', function(req,res) {
-    if(req.session.user){
-      res.redirect('/logged');
-    }
-    res.render('signup', {msg:req.session.msg});
   });
   app.get('/logout', function(req,res) {
     req.session.destroy(function() {
-      res.redirect('/logged#login');
+      res.redirect('/');
     });
   });
   app.get('/user/profile', users.getUserProfile);
@@ -76,10 +62,10 @@ module.exports = function(app) {
   		res.json(book);
   	});
   });
-  app.post('/api/login', users.login);
 
   //POST
-  app.post('/signup', users.signup);
+  app.post('/api/login', users.login);
+  app.post('/api/signup', users.signup);
   app.post('/user/update', users.updateUser);
   app.post('/user/delete', users.deleteUser);
 
@@ -90,6 +76,15 @@ module.exports = function(app) {
   			throw err;
   		}
   		res.json(book);
+  	});
+  });
+  app.post('/api/cart', function(req, res){
+  	var cart = req.body;
+  	_cart.addBook(cart, function(err, cart){
+  		if(err){
+  			throw err;
+  		}
+  		res.json(cart);
   	});
   });
   app.post('/api/genres', function(req, res){

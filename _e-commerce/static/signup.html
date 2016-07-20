@@ -1,0 +1,55 @@
+<div class="head-bread">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">LOGIN</a></li>
+            <li class="active">REGISTER</li>
+        </ol>
+    </div>
+</div>
+<!-- reg-form -->
+<div class="reg-form">
+  <div class="container">
+  	<div class="reg">
+  		<h3>Register Now</h3>
+  		<p>Welcome, please enter the following details to continue.</p>
+  		<p>If you have previously registered with us, <a href="#">click here</a></p>
+  		 <form ng-submit="signup()" method="POST">
+         <ul>
+            <li><h4 ng-show="errorRegistered">{{errorRegistered}}</h4></li>
+         </ul>
+  			<ul>
+  				<li class="text-info">Username: </li>
+  				<li><input ng-model="user.username" type="text" value="" ng-required="true"></li>
+  			</ul>
+        <ul>
+           <li><span ng-show="errorUserName">{{errorUserName}}</span></li>
+        </ul>
+  			<ul>
+  				<li class="text-info">Email: </li>
+  				<li><input ng-model="user.email" type="text" value="" ng-required="true"></li>
+  			</ul>
+        <ul>
+  				<li class="text-info">Password: </li>
+  				<li><input ng-model="user.password" type="password" value="" ng-required="true" id="user.password" name="user.password"></li>
+  			</ul>
+        <ul>
+          <li><span ng-show="errorPassword" >{{errorPassword}}</span></li>
+        </ul>
+  			<ul>
+  				<li class="text-info">Re-enter Password:</li>
+  				<li><input ng-model="user.repassword" type="password" value="" ng-required="true" id="user.repassword" name="user.repassword" ></li>
+  			</ul>
+  			<ul>
+  				<li class="text-info">Mobile Number:</li>
+  				<li><input ng-model="user.number" type="number" name="tel" ng-minlength="1" ng-maxlength="10" ng-required="true"></li>
+        </ul>
+        <ul>
+          <span ng-show="form.user.number.$invalid">Hey! No letters, buddy!</span>
+  			</ul>
+  			<input type="submit" value="Register Now">
+  			<p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p>
+  		</form>
+  	</div>
+  </div>
+</div>

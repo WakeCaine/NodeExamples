@@ -29,9 +29,11 @@ exports.login = function(req, res) {
       } else if (user.hashed_password === hashPW(req.body.password.toString())) {
         req.session.regenerate(function() {
           req.session.user = user.id;
-          req.session.username = user.username;
-          req.session.msg = 'Uwierzetelniono jako ' + user.username;
-          res.redirect('/');
+          req.session.username = req.body.username;
+          req.session.msg = 'Uwierzetelniono jako ' + req.body.username;
+          res.redirect('back');
+          res.render('/logged',{username: req.session.username,
+                              msg: req.session.msg, logged: true});
         });
       } else {
         err = "Uwierzetelnianie nie powiodło się.";
@@ -39,7 +41,7 @@ exports.login = function(req, res) {
       if(err){
         req.session.regenerate(function() {
           req.session.msg = err;
-          res.redirect('/login');
+          res.redirect('/logged#/login');
         });
       }
     });

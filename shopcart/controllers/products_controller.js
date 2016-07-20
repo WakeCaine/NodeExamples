@@ -11,7 +11,7 @@ exports.getProduct = function(req, res) {
   });
 };
 exports.getProducts = function(req, res) {
-  Product.find()
+  Product.find().
   .exec(function(err, products) {
     if (!products){
       res.json(404, {msg: 'Products Not Found.'});

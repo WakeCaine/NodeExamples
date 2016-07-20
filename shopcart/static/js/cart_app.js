@@ -26,37 +26,31 @@ app.controller('shoppingController', ['$scope', '$http', '$window',
      .error(function(data, status, headers, config) {
        $scope.orders = [];
      });
-    $scope.setContent = function(filename){
-      $scope.content = '/static/'+ filename;
-    };
-    $scope.setProduct = function(productId){
-      $scope.product = this.product;
-      $scope.content = '/static/product.html';
-    };
+
     $scope.cartTotal = function(){
       var total = 0;
-      for(var i=0; i<$scope.customer.cart.length; i++){
-        var item = $scope.customer.cart[i];
+      for(var i=0; i< $scope.session.customer.cart.length; i++){
+        var item = $scope.session.customer.cart[i];
         total += item.quantity * item.product[0].price;
       }
-      $scope.shipping = total*.05;
-      return total+$scope.shipping;
+      $scope.session.shipping = total*.05;
+      return total+$scope.session.shipping;
     };
     $scope.addToCart = function(productId){
       var found = false;
-      for(var i=0; i<$scope.customer.cart.length; i++){
-        var item = $scope.customer.cart[i];
+      for(var i=0; i<$scope.session.customer.cart.length; i++){
+        var item = $scope.session.customer.cart[i];
         if (item.product[0]._id == productId){
           item.quantity += 1;
           found = true;
         }
       }
       if (!found){
-        $scope.customer.cart.push({quantity: 1,
+        $scope.session.customer.cart.push({quantity: 1,
                                    product: [this.product]});
       }
       $http.post('/customers/update/cart',
-                 { updatedCart: $scope.customer.cart })
+                 { updatedCart: $scope.session.customer.cart })
        .success(function(data, status, headers, config) {
          $scope.content = '/static/cart.html';
        })
@@ -65,15 +59,15 @@ app.controller('shoppingController', ['$scope', '$http', '$window',
        });
     };
     $scope.deleteFromCart = function(productId){
-      for(var i=0; i<$scope.customer.cart.length; i++){
-        var item = $scope.customer.cart[i];
+      for(var i=0; i<$scope.session.customer.cart.length; i++){
+        var item = $scope.session.customer.cart[i];
         if (item.product[0]._id == productId){
-          $scope.customer.cart.splice(i,1);
+          $scope.session.customer.cart.splice(i,1);
           break;
         }
       }
       $http.post('/customers/update/cart',
-                 { updatedCart: $scope.customer.cart })
+                 { updatedCart: $scope.session.customer.cart })
        .success(function(data, status, headers, config) {
          $scope.content = '/static/cart.html';
        })
@@ -83,7 +77,7 @@ app.controller('shoppingController', ['$scope', '$http', '$window',
     };
     $scope.checkout = function(){
       $http.post('/customers/update/cart',
-                 { updatedCart: $scope.customer.cart })
+                 { updatedCart: $scope.session.customer.cart })
        .success(function(data, status, headers, config) {
          $scope.content = '/static/shipping.html';
        })
@@ -93,7 +87,7 @@ app.controller('shoppingController', ['$scope', '$http', '$window',
     };
     $scope.setShipping = function(){
       $http.post('/customers/update/shipping',
-          { updatedShipping :$scope.customer.shipping[0] })
+          { updatedShipping :$scope.session.customer.shipping[0] })
         .success(function(data, status, headers, config) {
           $scope.content = '/static/billing.html';
         })
@@ -104,7 +98,7 @@ app.controller('shoppingController', ['$scope', '$http', '$window',
     $scope.verifyBilling = function(ccv){
       $scope.ccv = ccv;
       $http.post('/customers/update/billing',
-          { updatedBilling: $scope.customer.billing[0], ccv: ccv})
+          { updatedBilling: $scope.session.customer.billing[0], ccv: ccv})
         .success(function(data, status, headers, config) {
           $scope.content = '/static/review.html';
         })
@@ -114,9 +108,9 @@ app.controller('shoppingController', ['$scope', '$http', '$window',
     };
     $scope.makePurchase = function(){
       $http.post('/orders/add',
-          { orderBilling: $scope.customer.billing[0],
-            orderShipping: $scope.customer.shipping[0],
-            orderItems: $scope.customer.cart })
+          { orderBilling: $scope.session.customer.billing[0],
+            orderShipping: $scope.session.customer.shipping[0],
+            orderItems: $scope.session.customer.cart })
         .success(function(data, status, headers, config) {
           $scope.customer.cart = [];
           $http.get('/orders/get')
